@@ -1,0 +1,15 @@
+---
+- name: Install and configure packages
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      command: apt-get update
+
+    - name: Install curl
+      apt:
+        name: curl
+        state: present
+
+
